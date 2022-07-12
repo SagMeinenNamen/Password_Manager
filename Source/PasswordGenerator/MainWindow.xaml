@@ -1,0 +1,235 @@
+﻿<Window x:Class="PasswordGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PasswordGenerator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing">
+    <Grid Background="#FF2D2D30">
+        <Grid.Effect>
+            <DropShadowEffect/>
+        </Grid.Effect>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="outputBox" VerticalAlignment="Top" ToolTip="Zufällig generiertes Passwort" Background="#FF333337" TextWrapping="Wrap" Margin="10,0" FontSize="20" Foreground="AliceBlue" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Height="87" />
+        <Button x:Name="generateButton" ToolTip="Passwort generieren" Content="Generieren" Margin="30,35,30,21" FontSize="25"  FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Click="generateButton_Click" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.278"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.495"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Slider x:Name="passwordLength" ToolTip="Ziehen um länge des Passwortes zu ändern" Grid.Row="3" Grid.Column="1" ValueChanged="Slider_ValueChanged" FontSize="30" Minimum="1" Maximum="80" Value="1" SmallChange="1" RenderTransformOrigin="0.5,0.5" Margin="0,1,0,0"/>
+        <Button x:Name="copyButton" ToolTip="Generiertes Passwort in die Zwischenablage speichern" Grid.Column="2" Grid.Row="2" Click="copyButton_Clicked" BorderBrush="White" Background="White" Margin="187,0,30,8" RenderTransformOrigin="0.5,0.5">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-3.504"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-1.439"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Image Source="Image1.png" Stretch="Fill" Height="40" Width="40"/>
+        </Button>
+        <TextBlock x:Name="sliderValue" ToolTip="Länge des Passwortes" HorizontalAlignment="Left" Height="52" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" FontSize="45" Foreground="#FF158293" Grid.Column="1" Grid.Row="4" Margin="101,0,0,0" Text="1" />
+        <Button Margin="187,0,30,8" ToolTip="Passwort speichern"  Background="White" BorderBrush="White" Click="Button_Click" Grid.Column="2" Grid.Row="3" RenderTransformOrigin="0.5,0.5"  >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-4.085"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-1.679"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Image Height="32" Source="savetheapplication_guardar_2958.png" Stretch="Fill" Width="37"/>
+        </Button>
+        <TextBox x:Name="pw1" ToolTip="Klicken um Namen zu ändern" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="20" Foreground="#FFECECEC"  Text="Passwort 1" Grid.Row="3" Background="#FF333333" TextChanged="pw1_TextChanged" BorderBrush="#FF2D2D30" Margin="10,1,0,0"/>
+        <TextBox x:Name="pw5" ToolTip="Klicken um Namen zu ändern" HorizontalAlignment="Left" Height="42" Margin="10,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="20" Foreground="#FFECECEC" Grid.Row="7" Background="#FF333333" Text="Passwort 5" TextChanged="pw5_TextChanged" BorderBrush="#FF2D2D30" />
+        <TextBox x:Name="pw4" ToolTip="Klicken um Namen zu ändern" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="20" Foreground="#FFECECEC" Grid.Row="6" Background="#FF333333" Text="Passwort 4" TextChanged="pw4_TextChanged" BorderBrush="#FF2D2D30" Margin="10,3,0,0"/>
+        <TextBox x:Name="pw3" ToolTip="Klicken um Namen zu ändern" HorizontalAlignment="Left" Height="42" Margin="10,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="20" Foreground="#FFECECEC" Grid.Row="5" Background="#FF333333" Text="Passwort 3" TextChanged="pw3_TextChanged" BorderBrush="#FF2D2D30" />
+        <TextBox x:Name="pw2" ToolTip="Klicken um Namen zu ändern" HorizontalAlignment="Left" Height="42" Margin="10,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="20" Foreground="#FFECECEC" Grid.Row="4" Background="#FF333333" Text="Passwort 2" TextChanged="pw2_TextChanged" BorderBrush="#FF2D2D30" />
+        <Button x:Name="copy1" ToolTip="Kopiere das 1. Passwort" HorizontalAlignment="Left" Height="40" Margin="149,6,0,0" VerticalAlignment="Top" Width="40" Click="copyPassword1" BorderBrush="White" Background="White" Grid.Row="3" >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Image Source="Image1.png" Stretch="Fill" Height="35" Width="35"/>
+        </Button>
+        <Button x:Name="copy4" ToolTip="Kopiere das 4. Passwort" HorizontalAlignment="Left" Height="40" Margin="149,6,0,0" VerticalAlignment="Top" Width="40" Click="copyPassword4" BorderBrush="White" Background="White" Grid.Row="6">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Image Source="Image1.png" Stretch="Fill" Height="35" Width="35"/>
+        </Button>
+        <Button x:Name="copy3" ToolTip="Kopiere das 3. Passwort" HorizontalAlignment="Left" Height="40" Margin="149,7,0,0" VerticalAlignment="Top" Width="40" Click="copyPassword3" BorderBrush="White" Background="White" Grid.Row="5">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Image Source="Image1.png" Stretch="Fill" Height="35" Width="35"/>
+        </Button>
+        <Button x:Name="copy2" ToolTip="Kopiere das 2. Passwort" HorizontalAlignment="Left" Height="40" Margin="149,6,0,0" VerticalAlignment="Top" Width="40" Click="copyPassword2" BorderBrush="White" Background="White" Grid.Row="4">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Image Source="Image1.png" Stretch="Fill" Height="35" Width="35"/>
+        </Button>
+        <Button x:Name="copy5" ToolTip="Kopiere das 5. Passwort" HorizontalAlignment="Left" Height="40" Margin="149,7,0,5" VerticalAlignment="Top"  Width="40" Click="copyPassword5" BorderBrush="White" Background="White" Grid.Row="7">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Image Source="Image1.png" Stretch="Fill" Height="35" Width="35"/>
+        </Button>
+        <!--<Border Grid.Column="1" BorderThickness="3" BorderBrush="Yellow" CornerRadius="100" Padding="2"
+        HorizontalAlignment="Center" VerticalAlignment="Center">-->
+        <TextBox x:Name="PasswordBox" HorizontalAlignment="Right" Height="50" Margin="0,0,0,3" TextWrapping="Wrap" Text="Passwort eingeben" VerticalAlignment="Bottom" Width="240" Background="#FF333333" BorderBrush="#FF333333" Foreground="#FF808C8C" FontSize="25" GotFocus="PasswordBox_GotFocus" Grid.Column="1" Grid.Row="6" Grid.RowSpan="2"   >
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Button x:Name="checkBox" ToolTip="Bestätige die eingabe des Passwortes" Content="✔" Margin="15,3,197,1" Background="{x:Null}" Click="Button_Click_1" FontSize="30" FontWeight="Bold" Grid.Column="2" Grid.Row="7" BorderBrush="{x:Null}" Foreground="#FF51FF51">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <TextBlock x:Name="loggedOut" ToolTip="Melde dich mit deinem Passwort an um deine Passwörter zu kopieren" HorizontalAlignment="Right" Height="80" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="84" Foreground="#FFB20000" Grid.Column="2" Grid.Row="6" Grid.RowSpan="2" Margin="0,0,54,3"><Run Text="      "/><Run Text="  "/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="                    "/><Run Text=" Abgemeldet"/></TextBlock>
+        <TextBlock x:Name="loggedIn" ToolTip="Du bist angemeldet und hast Zugriff auf alle Features" HorizontalAlignment="Right" Height="84" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="84" Foreground="#FF00CD13" Grid.Column="2" Grid.Row="6" Margin="0,0,53,-1" Grid.RowSpan="2"><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="            "/><Run Text="  "/><Run Text="       "/><Run Text="Angemeldet"/></TextBlock>
+        <Button x:Name="de2"   HorizontalAlignment="Left" Height="40" Margin="197,6,0,0" VerticalAlignment="Top" Width="37" Click="delete2" BorderBrush="White" Background="White" Grid.Row="4" >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Image Height="37" Source="bin-icon-vector-11515368.jpg" Stretch="Fill" Width="34"/>
+        </Button>
+        <Button x:Name="de1"   HorizontalAlignment="Left" Height="40" Margin="197,6,0,0" VerticalAlignment="Top" Width="37" BorderBrush="White" Background="White" Grid.Row="3" Click="delete1" >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Image Height="37" Source="bin-icon-vector-11515368.jpg" Stretch="Fill" Width="34"/>
+        </Button>
+        <Button x:Name="de3"   HorizontalAlignment="Left" Height="40" Margin="197,7,0,0" VerticalAlignment="Top" Width="37" Click="delete3" BorderBrush="White" Background="White" Grid.Row="5" >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Image Height="37" Source="bin-icon-vector-11515368.jpg" Stretch="Fill" Width="34"/>
+        </Button>
+        <Button x:Name="de4"   HorizontalAlignment="Left" Height="40" Margin="197,6,0,0" VerticalAlignment="Top" Width="37" Click="delete4" BorderBrush="White" Background="White" Grid.Row="6" >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Image Height="37" Source="bin-icon-vector-11515368.jpg" Stretch="Fill" Width="34"/>
+        </Button>
+        <Button x:Name="de5"   HorizontalAlignment="Left" Height="40" Margin="197,7,0,0" VerticalAlignment="Top" Width="37" Click="delete5" BorderBrush="White" Background="White" Grid.Row="7" >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Image Height="37" Source="bin-icon-vector-11515368.jpg" Stretch="Fill" Width="34"/>
+        </Button>
+        <Image ToolTip="All deine Passwörter die du speicherst&#10;werden mithilfe deines eigenen Passwortes&#10;sicher auf deinem PC verschlüsselt" Margin="0,0,7,7" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="Image5.png" Stretch="Fill" Grid.Column="2" Grid.Row="6" Height="48" Width="47" Grid.RowSpan="2" >
+            <Image.Effect>
+                <DropShadowEffect/>
+            </Image.Effect>
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.627"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.315"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button HorizontalAlignment="Left" Height="43" VerticalAlignment="Top" Width="44" Click="Button_Click_2" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Image ToolTip="Klick mich um alle gespeicherten Daten von dir zu sehen" HorizontalAlignment="Left" VerticalAlignment="Top" Source="iconfinder-key-4341299_120569 (1).png" Stretch="Fill" Height="33" Width="34" RenderTransformOrigin="-1.26,0.4"/>
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-16"?>
+<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT5M18.9719896S" SolutionTotalViewTime="PT51M33.0079419S" SolutionTotalDebugTime="PT29.0151241S">
+  <FileVersion>
+    <Major>1</Major>
+    <Minor>0</Minor>
+  </FileVersion>
+  <SolutionFolder>C:\repos\PasswordGenerator</SolutionFolder>
+  <SolutionCreattionDate>2020-10-14T16:44:09.3916664+02:00</SolutionCreattionDate>
+  <ProjectsCreatedDateList>
+    <ProjectCreated>
+      <ProjectName>C:\repos\PasswordGenerator\PasswordGenerator\Passwort Manager.csproj</ProjectName>
+      <CreatedDate>2020-10-04T13:01:50.4330162+02:00</CreatedDate>
+    </ProjectCreated>
+  </ProjectsCreatedDateList>
+  <SessionTimeList />
+  <LastSessionTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT5.1916534S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>Debug Mode</Item>
+      <ItemType>DebugModeItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2021-10-29T21:50:03.1500772+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT5.0861117S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\PasswordGenerator\PasswordGenerator\MainWindow.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\PasswordGenerator\PasswordGenerator\Passwort Manager.csproj</ProjectName>
+      <CreatedDate>2021-10-29T21:49:59.2149644+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+  </LastSessionTimeList>
+  <TotalTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT2M25.2917514S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>5</ViewedCount>
+      <Item>C:\repos\PasswordGenerator\PasswordGenerator\App.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\PasswordGenerator\PasswordGenerator\Passwort Manager.csproj</ProjectName>
+      <CreatedDate>2020-10-23T16:22:31.9479496+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT49.6851586S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\PasswordGenerator\PasswordGenerator\bin-icon-vector-11515368.jpg</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\PasswordGenerator\PasswordGenerator\Passwort Manager.csproj</ProjectName>
+      <CreatedDate>2020-10-23T16:14:52.3710243+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT5.6967061S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>\Users\armul\.software\CodeTime.txt</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2020-10-14T16:46:07.026556+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT29.0151241S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>5</ViewedCount>
+      <Item>Debug Mode</Item>
+      <ItemType>DebugModeItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2020-10-24T12:18:42.7020186+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT11M59.520819S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>4</ViewedCount>
+      <Item>C:\repos\PasswordGenerator\PasswordGenerator\Encrypter.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\PasswordGenerator\PasswordGenerator\Passwort Manager.csproj</ProjectName>
+      <CreatedDate>2020-10-14T16:46:40.2980344+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT14M24.6749277S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>16</ViewedCount>
+      <Item>C:\repos\PasswordGenerator\PasswordGenerator\MainWindow.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\PasswordGenerator\PasswordGenerator\Passwort Manager.csproj</ProjectName>
+      <CreatedDate>2020-10-14T16:44:09.4126397+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT18M51.7894444S" EditActiveTime="PT5M18.9719896S">
+      <ModifiedDate>2020-10-24T12:18:40.7447544+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>2</EditedCount>
+      <ViewedCount>11</ViewedCount>
+      <Item>C:\repos\PasswordGenerator\PasswordGenerator\MainWindow.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\PasswordGenerator\PasswordGenerator\Passwort Manager.csproj</ProjectName>
+      <CreatedDate>2020-10-14T16:49:28.9965381+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT54.9892478S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>8</ViewedCount>
+      <Item>C:\repos\PasswordGenerator\PasswordGenerator\Window1.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\PasswordGenerator\PasswordGenerator\Passwort Manager.csproj</ProjectName>
+      <CreatedDate>2020-10-14T16:45:53.3902282+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M1.3608836S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>3</ViewedCount>
+      <Item>C:\repos\PasswordGenerator\PasswordGenerator\Window1.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\PasswordGenerator\PasswordGenerator\Passwort Manager.csproj</ProjectName>
+      <CreatedDate>2020-10-22T19:27:11.456911+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+  </TotalTimeList>
+  <HistoryTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT5.1916534S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>Debug Mode</Item>
+      <ItemType>DebugModeItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2021-10-29T21:50:03.1500772+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT5.0811059S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\PasswordGenerator\PasswordGenerator\MainWindow.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\PasswordGenerator\PasswordGenerator\Passwort Manager.csproj</ProjectName>
+      <CreatedDate>2021-10-29T21:49:59.2149644+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+  </HistoryTimeList>
+</DevTrackerData>

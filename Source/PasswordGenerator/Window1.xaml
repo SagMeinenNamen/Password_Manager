@@ -1,0 +1,22 @@
+﻿<Window x:Class="PasswordGenerator.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PasswordGenerator"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid Background="#FF2D2D30">
+        <TextBox x:Name="pw1" HorizontalAlignment="Left" Height="61" Margin="262,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Background="#FF333333" BorderBrush="{x:Null}"  Foreground="#FF767676" FontSize="25"/>
+        <TextBlock HorizontalAlignment="Left" Height="59" Margin="228,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="403" FontSize="35" Text="Gebe dein Passwort ein:" Foreground="#FFECECEC"/>
+        <TextBox x:Name="pw2" HorizontalAlignment="Left" Height="60" Margin="262,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Background="#FF333333" BorderBrush="{x:Null}" Foreground="#FF767676"  FontSize="25"/>
+        <TextBlock HorizontalAlignment="Left" Height="59" Margin="248,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="403" FontSize="35" Text="Und wiederhole es:" Foreground="#FFECECEC"/>
+        <Button Content="✔" HorizontalAlignment="Left" Height="75" Margin="576,302,0,0" VerticalAlignment="Top" Width="75" Background="{x:Null}" FontSize="50" Click="Button_Click" BorderBrush="{x:Null}" Foreground="#FF6DFF42">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="49" Margin="10,360,0,0" TextWrapping="Wrap" Text="Das Passwort muss mindestens aus 8 Zeichen bestehen." VerticalAlignment="Top" Width="116" Foreground="#FFEEEEEE" RenderTransformOrigin="0.601,0.437"/>
+
+    </Grid>
+</Window>
