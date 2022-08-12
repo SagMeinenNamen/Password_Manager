@@ -1,0 +1,90 @@
+﻿<Window x:Class="Password_Manager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Password_Manager"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Password Manager" Height="450" Width="800" MinWidth="720" MinHeight="460" Closing="Window_Closing">
+    <Grid Background="#FF2D2D30">
+          <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Teal.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Indigo.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+            </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="OutputTextBlock" materialDesign:HintAssist.Hint="Generated passwords will be shown here" VerticalContentAlignment="Center" IsReadOnly="True" BorderThickness="0" Background="#FF3B3B3D" TextWrapping="Wrap" FontSize="18" Foreground="AliceBlue" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="8" Padding="5" Grid.RowSpan="2" />
+        <Button x:Name="GenerateButton"  Content="Generate"  FontSize="18"  FontWeight="Bold" Click="GenerateButton_Click" Grid.Column="11" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="2"/>
+        <Slider x:Name="LengthSlider" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="4" ValueChanged="Slider_ValueChanged" FontSize="30" Minimum="1" Maximum="80" Value="1" SmallChange="1"/>
+        <TextBlock x:Name="SliderValue"  FontSize="30" Foreground="White" Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.ColumnSpan="2" Grid.RowSpan="2" Text="8" />
+        <TextBox x:Name="NameTextBox" Grid.Column="10" materialDesign:HintAssist.Hint="Enter name" Foreground="White" VerticalContentAlignment="Bottom" FontSize="17" HorizontalContentAlignment="Center" Grid.ColumnSpan="3" Margin="0 0 20 0" Grid.RowSpan="2" Grid.Row="3" VerticalAlignment="Center"/>
+        <Button x:Name="SavePasswordBtn" Click="SavePasswordBtn_Click" Grid.Column="13" Grid.RowSpan="2" Grid.Row="3">
+            <materialDesign:PackIcon Kind="ContentSave" Width="auto" Height="auto"/>
+        </Button>
+        <PasswordBox x:Name="PasswordBox" HorizontalContentAlignment="Center" materialDesign:HintAssist.Hint="Enter password" VerticalAlignment="Bottom" Foreground="White" FontSize="25" Grid.Column="3" Grid.Row="12"  Grid.RowSpan="2" Grid.ColumnSpan="5" KeyDown="PasswordBox_KeyDown"/>
+        <Button x:Name="ConfirmBtn" Click="ConfirmBtn_Clicked" FontSize="18" FontWeight="Bold" Grid.Column="9" Grid.Row="12" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Grid.RowSpan="2" VerticalAlignment="Bottom" BorderBrush="{x:Null}" Content="Confirm"/>
+        <TextBlock x:Name="AuthenticatedTextBlock" VerticalAlignment="Bottom" Text="Not autheticated" Foreground="#FFFF2E2E" FontSize="14" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="14" TextAlignment="Left" Padding="8 0 0 4"/>
+        <TextBlock x:Name="VaultInfo" TextWrapping="Wrap" Foreground="White" Text="Enter your password to acess your vault." Grid.Row="8" Grid.Column="11" FontSize="18" TextAlignment="Center" TextDecorations="Underline" Grid.ColumnSpan="3" HorizontalAlignment="Left" Grid.RowSpan="3" />
+        <ScrollViewer  Grid.Row="6" Grid.Column="10" Grid.ColumnSpan="5" Grid.RowSpan="9" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+            <ListView x:Name="PasswordList" SelectionMode="Single" HorizontalContentAlignment="Stretch" BorderBrush="Transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <DockPanel LastChildFill="True">
+                                <TextBlock x:Name="NameBlock"  FontSize="20" MaxWidth="160" Text="{Binding Name}" Foreground="White" FontWeight="Bold"/>
+                                <TextBlock x:Name="PasswordBlock" FontSize="25" Grid.Column="1" HorizontalAlignment="Center" Foreground="RoyalBlue" Text="********"/>
+                            </DockPanel>
+                            <DockPanel LastChildFill="False" Margin="0 10 0 0" HorizontalAlignment="Right">
+                                <Button x:Name="CopyButton" Tag="{Binding Name}" Margin="0 0 40 0" Grid.Column="0" Grid.Row="5" Click="CopyButton_Clicked">
+                                    <materialDesign:PackIcon Kind="ClipboardOutline" Width="auto" Height="auto"/>
+                                </Button>
+                                <Button x:Name="DeleteBtn" Tag="{Binding Name}" Grid.Row="6" Grid.Column="0" Click="DeleteBtn_Clicked" >
+                                    <materialDesign:PackIcon Kind="Delete" Width="auto" Height="auto"/>
+                                </Button>
+                            </DockPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollViewer>
+    </Grid>
+</Window>
