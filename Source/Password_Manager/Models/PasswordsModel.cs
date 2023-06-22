@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,8 @@ namespace Password_Manager
             }
 
             public string Name { get; set; }
+            public string PrimaryColor { get; set; }
+
         }
     }
 }

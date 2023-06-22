@@ -6,6 +6,10 @@ using ModernWpf;
 using MessageBox = ModernWpf.MessageBox;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.Win32;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Password_Manager
 {
@@ -39,7 +43,7 @@ namespace Password_Manager
             }
             else
             {
-                MessageBox.Show("The password is too short. Needs to be at least 8 characters.");
+                MessageBox.Show("The password is too short. Must be at least 8 characters long.");
             }
         }
 
@@ -78,6 +82,49 @@ namespace Password_Manager
         {
             e.Cancel = true;
             Environment.Exit(0);
+        }
+
+        private void ImportButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.InitialDirectory = GetDownloadFolderPath();
+                dialog.Filter = "Text files (*.txt)|*.txt";
+                dialog.ShowDialog();
+                string[] data = File.ReadAllLines(dialog.FileName);
+                if (data.Length == 2)
+                {
+                    if (IsValidSHA256Hash(data[0]))
+                    {
+                        Settings.Default.MasterPassword = data[0];
+                        Settings.Default.SavedPasswords = data[1];
+                        Settings.Default.Save();
+                        MessageBox.Show("Successfully imported your data!");
+                        this.Hide();
+                        return;
+                    }
+                }
+                MessageBox.Show("The selected file is not a valid export file.");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        static bool IsValidSHA256Hash(string hash)
+        {
+            if (hash.Length != 64 || !Regex.IsMatch(hash, @"\A\b[0-9a-fA-F]+\b\Z"))
+                return false;
+            else
+                return true;
+        }
+
+        public static string GetDownloadFolderPath()
+        {
+            return Convert.ToString(Microsoft.Win32.Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty));
         }
     }
 }
